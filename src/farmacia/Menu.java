@@ -3,6 +3,9 @@ package farmacia;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import farmacia.model.Cosmetico;
+import farmacia.model.Medicamento;
+import farmacia.model.Produto;
 import farmacia.util.Cores;
 
 public class Menu {
