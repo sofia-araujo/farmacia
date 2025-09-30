@@ -3,16 +3,19 @@ package farmacia;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import farmacia.controller.ProdutoController;
 import farmacia.model.Cosmetico;
 import farmacia.model.Medicamento;
-import farmacia.model.Produto;
+
 import farmacia.util.Cores;
 
 public class Menu {
 	private static final Scanner leia = new Scanner(System.in);
+	private static final ProdutoController produtoController = new ProdutoController();
 	
 	public static void main(String[] args) {
 		int opcao;
+		criarProdutosTeste();
 		
 		while(true) {
 			
@@ -91,5 +94,10 @@ public class Menu {
 	public static void keyPress() {
 		System.out.println(Cores.TEXT_RESET+"\n\nPressione Enter para continuar...");
 		leia.nextLine();
+	}
+	
+	public static void criarProdutosTeste() {
+		produtoController.criarProduto(new Medicamento(produtoController.gerarId(), 1, 12.88f, "Dipirona", "Generico 2"));
+		produtoController.criarProduto(new Cosmetico(produtoController.gerarId(), 2, 12.88f, "Shampoo", "Uva"));
 	}
 }
